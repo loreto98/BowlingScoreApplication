@@ -50,42 +50,64 @@ public class PointActivity extends AppCompatActivity {
 
     public void allpinA(View view) {
         int pinsdown = 10;
-        if (strikeOnA == 2) {
-            pointsALaunch[roundA - 1] += pinsdown;
-            strikeOnA = 1;
-        }
-        if (strikeOnA == 1) {
-            pointsALaunch[roundA - 3] = pinsdown;
-            strikeOnA = 0;
-        }
-        if (roundA == roundB) {
-            firstMessageStrike();
-            pointsALaunch[roundA] = pinsdown;
-            roundA += 2;
-            strikeOnA = 2;
+        tempSumRoundA += pinsdown;
+        if (tempSumRoundA <= 10) {
+            launchA = launchA + 3;
+            launchB = 1;
+            displayLaunchA();
+            if (strikeOnA == 2) {
+                pointsALaunch[roundA - 1] += pinsdown;
+                strikeOnA = 1;
+            }
+            if (strikeOnA == 1) {
+                pointsALaunch[roundA - 3] = pinsdown;
+                strikeOnA = 0;
+            }
+            if (roundA == roundB) {
+                firstMessageStrike();
+                pointsALaunch[roundA] = pinsdown;
+                roundA += 2;
+                strikeOnA = 2;
+            } else {
+                secondMessageStrike();
+            }
         } else {
-            secondMessageStrike();
+            lessPinsMessage();
+            tempSumRoundA -= pinsdown;
         }
+        displayRoundB();
+        displayLaunchB();
     }
 
     public void allpinB(View view) {
         int pinsdown = 10;
-        if (strikeOnB == 2) {
-            pointsBLaunch[roundB - 1] += pinsdown;
-            strikeOnB = 1;
-        }
-        if (strikeOnB == 1) {
-            pointsBLaunch[roundB - 3] = pinsdown;
-            strikeOnB = 0;
-        }
-        if (roundB < roundA) {
-            firstMessageStrike();
-            pointsBLaunch[roundB] = pinsdown;
-            roundB += 2;
-            strikeOnB = 2;
+        tempSumRoundB += pinsdown;
+        if (tempSumRoundB <= 10) {
+            launchB = launchB + 3;
+            launchA = 1;
+            displayLaunchB();
+            if (strikeOnB == 2) {
+                pointsBLaunch[roundB - 1] += pinsdown;
+                strikeOnB = 1;
+            }
+            if (strikeOnB == 1) {
+                pointsBLaunch[roundB - 3] = pinsdown;
+                strikeOnB = 0;
+            }
+            if (roundB < roundA) {
+                firstMessageStrike();
+                pointsBLaunch[roundB] = pinsdown;
+                roundB += 2;
+                strikeOnB = 2;
+            } else {
+                secondMessageStrike();
+            }
         } else {
-            secondMessageStrike();
+            lessPinsMessage();
+            tempSumRoundB -= pinsdown;
         }
+        displayLaunchA();
+        displayRoundA();
     }
 
 
