@@ -8,15 +8,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static com.gjini.loris.bowlingscoreapplication.R.drawable.winner;
-import static com.gjini.loris.bowlingscoreapplication.R.id.FirstPlayer;
 import static com.gjini.loris.bowlingscoreapplication.R.id.Player1;
 import static com.gjini.loris.bowlingscoreapplication.R.id.Player2;
-import static com.gjini.loris.bowlingscoreapplication.R.id.SecondPlayer;
 
 public class PointActivity extends AppCompatActivity {
 
@@ -27,6 +23,8 @@ public class PointActivity extends AppCompatActivity {
     int strikeOnA, strikeOnB = 0;
     int spareA, spareB = 0;
     int totalSumA, totalSumB = 0;
+    int launchA = 1;
+    int launchB = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -234,9 +232,23 @@ public class PointActivity extends AppCompatActivity {
     }
 
 
+    private void spareOnA(int pinsdown) {
+        pointsALaunch[roundA - 1] += pinsdown;
+        spareA = 0;
+    }
+
+    private void spareOnB(int pinsdown) {
+        pointsBLaunch[roundB - 1] += pinsdown;
+        spareB = 0;
+    }
+
+
     private void calculationPointsA(int pinsdown) {
+        launchA = launchA + 1;
+        launchB = 1;
         booleanRoundA();
         tempSumRoundA += pinsdown;
+        displayLaunchA();
         if (tempSumRoundA <= 10) {
             if (roundA == roundB || roundA == (roundB + 1)) {
                 pointsALaunch[roundA] = pinsdown;
@@ -253,8 +265,9 @@ public class PointActivity extends AppCompatActivity {
                     oneStrikeOnA(pinsdown);
                     TotalPointA();
                 }
-            } else
+            } else {
                 secondMessage();
+            }
             if (tempSumRoundA == 10) {
                 spareA = 1;
             }
@@ -262,12 +275,16 @@ public class PointActivity extends AppCompatActivity {
             lessPinsMessage();
             tempSumRoundA -= pinsdown;
         }
-        displayRoundA();
+        displayRoundB();
+        displayLaunchB();
     }
 
     private void calculationPointsB(int pinsdown) {
+        launchB = launchB + 1;
+        launchA = 1;
         booleanRoundB();
         tempSumRoundB += pinsdown;
+        displayLaunchB();
         if (tempSumRoundB <= 10) {
             if (roundB < roundA) {
                 pointsBLaunch[roundB] = pinsdown;
@@ -287,31 +304,22 @@ public class PointActivity extends AppCompatActivity {
             } else {
                 secondMessage();
             }
-            if (tempSumRoundB == 10){
+            if (tempSumRoundB == 10) {
                 spareB = 1;
             }
         } else {
             lessPinsMessage();
             tempSumRoundB -= pinsdown;
         }
-        displayRoundB();
-        if(roundB==20) {
+        displayLaunchA();
+        displayRoundA();
+        if (roundB == 20) {
             winner();
         }
     }
 
 
-    private void spareOnA(int pinsdown) {
-        pointsALaunch[roundA - 1] += pinsdown;
-        spareA = 0;
-    }
-
-    private void spareOnB(int pinsdown) {
-        pointsBLaunch[roundB - 1] += pinsdown;
-        spareB = 0;
-    }
-
-    public void winner(){
+    public void winner() {
         if (totalSumA > totalSumB) {
             TextView FirstPlayer = (TextView) findViewById(R.id.Player1);
             String FirstPlayerString = FirstPlayer.getText().toString();
@@ -330,7 +338,7 @@ public class PointActivity extends AppCompatActivity {
             startActivity(pointactivity);
 
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        } else{
+        } else {
             String SecondPlayerString = getString(R.string.drawfinal);
 
             Intent pointactivity = new Intent(this, WinnerActivity.class);
@@ -371,15 +379,33 @@ public class PointActivity extends AppCompatActivity {
     }
 
     private void displayRoundA() {
-        int round=(roundA/2)+1;
-        TextView pointsA = (TextView) findViewById(R.id.roundNumberA);
-        pointsA.setText("" + round);
+        int round = (roundA / 2) + 1;
+        TextView roundA = (TextView) findViewById(R.id.roundNumberA);
+        roundA.setText("" + round);
     }
 
     private void displayRoundB() {
-        int round=(roundB/2)+1;
-        TextView pointsB = (TextView) findViewById(R.id.roundNumberB);
-        pointsB.setText("" + round);
+        int round = (roundB / 2) + 1;
+        TextView roundB = (TextView) findViewById(R.id.roundNumberB);
+        roundB.setText("" + round);
+    }
+
+    private void displayLaunchA() {
+        TextView launchnumberA = (TextView) findViewById(R.id.launchNumberA);
+        if (launchA <= 2) {
+            launchnumberA.setText("" + launchA);
+        } else {
+            launchnumberA.setText("Next Player");
+        }
+    }
+
+    private void displayLaunchB() {
+        TextView launchnumberB = (TextView) findViewById(R.id.launchNumberB);
+        if (launchB <= 2) {
+            launchnumberB.setText("" + launchB);
+        } else {
+            launchnumberB.setText("Next Player");
+        }
     }
 
 
@@ -431,16 +457,36 @@ public class PointActivity extends AppCompatActivity {
             pointsALaunch[i] = 0;
             pointsBLaunch[i] = 0;
         }
-        roundA= 0;
+        roundA = 0;
         roundB = 0;
-        tempSumRoundA= 0;
+        tempSumRoundA = 0;
         tempSumRoundB = 0;
-        strikeOnA= 0;
+        strikeOnA = 0;
         strikeOnB = 0;
-        spareA= 0;
+        spareA = 0;
         spareB = 0;
-        totalSumA= 0;
+        totalSumA = 0;
         totalSumB = 0;
+        launchA = 1;
+        launchB = 1;
+
+        TextView launchnumberB = (TextView) findViewById(R.id.launchNumberB);
+        launchnumberB.setText("1");
+
+        TextView launchnumberA = (TextView) findViewById(R.id.launchNumberA);
+        launchnumberA.setText("1");
+
+        TextView roundB = (TextView) findViewById(R.id.roundNumberB);
+        roundB.setText("1");
+
+        TextView roundA = (TextView) findViewById(R.id.roundNumberA);
+        roundA.setText("1");
+
+        TextView pointsA = (TextView) findViewById(R.id.team_a_score);
+        pointsA.setText("0");
+
+        TextView pointsB = (TextView) findViewById(R.id.team_a_score);
+        pointsB.setText("0");
 
 
         Context context = getApplicationContext();
