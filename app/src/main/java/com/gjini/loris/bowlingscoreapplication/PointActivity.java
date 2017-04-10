@@ -244,12 +244,12 @@ public class PointActivity extends AppCompatActivity {
 
 
     private void calculationPointsA(int pinsdown) {
-        launchA = launchA + 1;
-        launchB = 1;
         booleanRoundA();
         tempSumRoundA += pinsdown;
-        displayLaunchA();
         if (tempSumRoundA <= 10) {
+            launchA = launchA + 1;
+            launchB = 1;
+            displayLaunchA();
             if (roundA == roundB || roundA == (roundB + 1)) {
                 pointsALaunch[roundA] = pinsdown;
                 roundA++;
@@ -280,12 +280,12 @@ public class PointActivity extends AppCompatActivity {
     }
 
     private void calculationPointsB(int pinsdown) {
-        launchB = launchB + 1;
-        launchA = 1;
         booleanRoundB();
         tempSumRoundB += pinsdown;
-        displayLaunchB();
         if (tempSumRoundB <= 10) {
+            launchB = launchB + 1;
+            launchA = 1;
+            displayLaunchB();
             if (roundB < roundA) {
                 pointsBLaunch[roundB] = pinsdown;
                 roundB++;
