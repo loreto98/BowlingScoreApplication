@@ -9,25 +9,21 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/winner"
-        android:layout_margin="20dp"/>
+        android:layout_margin="@dimen/winnerimage_margin"
+        android:src="@drawable/winner" />
 
     <TextView
+        style="@style/congratulationsTextFont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Congratulations"
-        android:textSize="30sp"
-        android:textColor="@android:color/black"
-        android:gravity="center_horizontal"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:text="@string/congratulations" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="player"
         android:id="@+id/playerid"
-        android:gravity="center_horizontal"
-        android:textSize="50sp"
-        android:textColor="@android:color/black"/>
+        style="@style/winnerTextFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/winnerName" />
 
 </LinearLayout>

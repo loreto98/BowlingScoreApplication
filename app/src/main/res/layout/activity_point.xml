@@ -10,12 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:id="@+id/page_one"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
             <ScrollView
+                android:id="@+id/page_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -26,26 +22,19 @@
 
                     <TextView
                         android:id="@+id/Player1"
+                        style="@style/playerTextFont"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Player 1"
-                        android:textColor="@android:color/black"
-                        android:textSize="40sp" />
+                        android:layout_margin="@dimen/playertext_margin"
+                        android:text="@string/player_1" />
 
                     <TextView
                         android:id="@+id/team_a_score"
+                        style="@style/pointsFont"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="24dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="0"
-                        android:textColor="#000000"
-                        android:textSize="60sp" />
+                        android:layout_margin="@dimen/points_margin"
+                        android:text="@string/startingPoints" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -56,52 +45,42 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
                             android:layout_weight="0.5"
                             android:orientation="vertical">
 
                             <TextView
+                                style="@style/datasTextFont"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="Round:"
-                                android:textColor="@android:color/black"
-                                android:textSize="22sp" />
+                                android:text="@string/roundText" />
 
                             <TextView
                                 android:id="@+id/roundNumberA"
+                                style="@style/datasValueFont"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="1"
-                                android:textColor="@android:color/black"
-                                android:textSize="18sp" />
+                                android:text="1" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
                             android:layout_weight="0.5"
                             android:orientation="vertical">
 
                             <TextView
+                                style="@style/datasTextFont"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="Launch:"
-                                android:textColor="@android:color/black"
-                                android:textSize="22sp" />
+                                android:text="@string/launchText" />
 
                             <TextView
                                 android:id="@+id/launchNumberA"
+                                style="@style/datasValueFont"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="1"
-                                android:textColor="@android:color/black"
-                                android:textSize="18sp" />
+                                android:text="1" />
 
                         </LinearLayout>
 
@@ -113,14 +92,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/button_points_margin"
                         android:onClick="allpinA"
-                        android:text="Strike" />
+                        android:text="@string/strikeButton" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/button_points_margin"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
@@ -130,7 +109,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="onepinA"
-                            android:text="1" />
+                            android:text="@string/onepointButton" />
 
                         <Button
                             android:id="@+id/twopointa"
@@ -138,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="twopinA"
-                            android:text="2" />
+                            android:text="@string/twopointButton" />
 
                         <Button
                             android:id="@+id/threepointa"
@@ -146,14 +125,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="threepinA"
-                            android:text="3" />
+                            android:text="@string/threepointButton" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/button_points_margin"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
@@ -163,7 +142,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="fourpinA"
-                            android:text="4" />
+                            android:text="@string/fourpointButton" />
 
                         <Button
                             android:id="@+id/fivepointa"
@@ -171,7 +150,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="fivepinA"
-                            android:text="5" />
+                            android:text="@string/fivepointButton" />
 
                         <Button
                             android:id="@+id/sixpointa"
@@ -179,7 +158,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="sixpinA"
-                            android:text="6" />
+                            android:text="@string/sixpointButton" />
 
                     </LinearLayout>
 
@@ -196,7 +175,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="sevenpinA"
-                            android:text="7" />
+                            android:text="@string/sevenpointButton" />
 
                         <Button
                             android:id="@+id/eightpointa"
@@ -204,7 +183,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="eightpinA"
-                            android:text="8" />
+                            android:text="@string/eightpointButton" />
 
                         <Button
                             android:id="@+id/ninepointa"
@@ -212,7 +191,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="ninepinA"
-                            android:text="9" />
+                            android:text="@string/ninepointButton" />
 
                     </LinearLayout>
 
@@ -222,29 +201,21 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:onClick="zeropinA"
-                        android:text="0" />
+                        android:text="@string/zeropointButton" />
 
                     <ImageView
+                        style="@style/imageDecoration"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_margin="50dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerInside"
+                        android:layout_margin="@dimen/imagedecoration_margin"
                         android:src="@drawable/bowling" />
 
                 </LinearLayout>
 
             </ScrollView>
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/page_two"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
             <ScrollView
+                android:id="@+id/page_two"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -255,26 +226,19 @@
 
                     <TextView
                         android:id="@+id/Player2"
+                        style="@style/playerTextFont"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Player 2"
-                        android:textColor="@android:color/black"
-                        android:textSize="40sp" />
+                        android:layout_margin="@dimen/playertext_margin"
+                        android:text="@string/player_2" />
 
                     <TextView
                         android:id="@+id/team_b_score"
+                        style="@style/pointsFont"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="24dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="0"
-                        android:textColor="#000000"
-                        android:textSize="60sp" />
+                        android:layout_margin="@dimen/points_margin"
+                        android:text="@string/startingPoints" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -285,52 +249,42 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
                             android:layout_weight="0.5"
                             android:orientation="vertical">
 
                             <TextView
+                                style="@style/datasTextFont"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="Round:"
-                                android:textColor="@android:color/black"
-                                android:textSize="22sp" />
+                                android:text="@string/roundText" />
 
                             <TextView
                                 android:id="@+id/roundNumberB"
+                                style="@style/datasValueFont"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="1"
-                                android:textColor="@android:color/black"
-                                android:textSize="18sp" />
+                                android:text="1" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
                             android:layout_weight="0.5"
                             android:orientation="vertical">
 
                             <TextView
+                                style="@style/datasTextFont"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="Launch:"
-                                android:textColor="@android:color/black"
-                                android:textSize="22sp" />
+                                android:text="@string/launchText" />
 
                             <TextView
                                 android:id="@+id/launchNumberB"
+                                style="@style/datasValueFont"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:text="1"
-                                android:textColor="@android:color/black"
-                                android:textSize="18sp" />
+                                android:text="1" />
 
                         </LinearLayout>
 
@@ -342,14 +296,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/button_points_margin"
                         android:onClick="allpinB"
-                        android:text="Strike" />
+                        android:text="@string/strikeButton" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/button_points_margin"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
@@ -359,7 +313,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="onepinB"
-                            android:text="1" />
+                            android:text="@string/onepointButton" />
 
                         <Button
                             android:id="@+id/twopointb"
@@ -367,7 +321,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="twopinB"
-                            android:text="2" />
+                            android:text="@string/twopointButton" />
 
                         <Button
                             android:id="@+id/threepointb"
@@ -375,14 +329,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="threepinB"
-                            android:text="3" />
+                            android:text="@string/threepointButton" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/button_points_margin"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
@@ -392,7 +346,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="fourpinB"
-                            android:text="4" />
+                            android:text="@string/fourpointButton" />
 
                         <Button
                             android:id="@+id/fivepointb"
@@ -400,7 +354,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="fivepinB"
-                            android:text="5" />
+                            android:text="@string/fivepointButton" />
 
                         <Button
                             android:id="@+id/sixpointb"
@@ -408,7 +362,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="sixpinB"
-                            android:text="6" />
+                            android:text="@string/sixpointButton" />
 
                     </LinearLayout>
 
@@ -425,7 +379,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="sevenpinB"
-                            android:text="7" />
+                            android:text="@string/sevenpointButton" />
 
                         <Button
                             android:id="@+id/eightpointb"
@@ -433,7 +387,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="eightpinB"
-                            android:text="8" />
+                            android:text="@string/eightpointButton" />
 
                         <Button
                             android:id="@+id/ninepointb"
@@ -441,7 +395,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:onClick="ninepinB"
-                            android:text="9" />
+                            android:text="@string/ninepointButton" />
 
                     </LinearLayout>
 
@@ -451,34 +405,29 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:onClick="zeropinB"
-                        android:text="0" />
+                        android:text="@string/zeropointButton" />
 
                     <ImageView
+                        style="@style/imageDecoration"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_margin="50dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerInside"
+                        android:layout_margin="@dimen/imagedecoration_margin"
                         android:src="@drawable/bowling" />
 
                 </LinearLayout>
 
             </ScrollView>
 
-        </RelativeLayout>
-
     </android.support.v4.view.ViewPager>
 
     <Button
         android:id="@+id/resetScore"
+        style="@style/resetButton"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/reset_button_margin"
         android:background="@drawable/roundbutton"
         android:onClick="resetScore"
-        android:text="RESET" />
+        android:text="@string/resetButtonText" />
 
 </RelativeLayout>

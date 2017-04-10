@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="first_text_view_margin">10dp</dimen>
+
+    <dimen name="button_start_margin">24dp</dimen>
+
+    <dimen name="welcome_margin">20dp</dimen>
+
+    <dimen name="reset_button_margin">20dp</dimen>
+
+    <dimen name="edit_text_margin">14dp</dimen>
+
+    <dimen name="instruction_margin">10dp</dimen>
+
+    <dimen name="playertext_margin">12dp</dimen>
+
+    <dimen name="points_margin">8dp</dimen>
+
+    <dimen name="button_points_margin">10dp</dimen>
+
+    <dimen name="imagedecoration_margin">50dp</dimen>
+
+    <dimen name="winnerimage_margin">20dp</dimen>
+
+
+</resources>

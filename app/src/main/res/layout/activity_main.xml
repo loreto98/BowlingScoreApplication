@@ -11,23 +11,19 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/CodeFontWelcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center_horizontal"
-            android:text="Welcome to this Score Keeper App!"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="40sp" />
+            android:layout_margin="@dimen/welcome_margin"
+            android:text="@string/walcometoapp" />
 
         <EditText
             android:id="@+id/FirstPlayer"
+            style="@style/EditTextPlayers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
-            android:hint="Name First Player"
-            android:imeOptions="actionDone"
-            android:inputType="textCapWords"
-            android:gravity="center_horizontal"/>
+            android:layout_margin="@dimen/edit_text_margin"
+            android:hint="@string/hintfirstplayertextview" />
 
         <View
             android:layout_width="match_parent"
@@ -38,41 +34,36 @@
 
         <EditText
             android:id="@+id/SecondPlayer"
+            style="@style/EditTextPlayers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
-            android:hint="Name Second Player"
-            android:imeOptions="actionDone"
-            android:inputType="textCapWords"
-            android:gravity="center_horizontal"/>
+            android:layout_margin="@dimen/edit_text_margin"
+            android:hint="@string/hintsecondplayertextview" />
 
         <TextView
+            style="@style/CodeFontInstructions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="When you are ready press the button below!"
-            android:gravity="center_horizontal"
-            android:textSize="18sp"
-            android:textColor="@android:color/holo_blue_light"
-            android:layout_margin="10dp"/>
+            android:layout_margin="@dimen/instruction_margin"
+            android:text="@string/instructionTextView" />
 
         <ImageView
             android:id="@+id/GoodLuck"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:contentDescription="Good Luck!"
+            android:contentDescription="@string/goodluckImageViewContent"
             android:src="@drawable/goodluck" />
 
         <Button
             android:id="@+id/Start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="24dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/button_start_margin"
             android:onClick="goToPointActivity"
-            android:text="Start the game!"
-            android:textAllCaps="true"
-            android:layout_gravity="bottom"/>
+            android:text="@string/buttonStartGame"
+            android:textAllCaps="true" />
 
     </LinearLayout>
 

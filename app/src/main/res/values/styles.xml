@@ -20,4 +20,74 @@
     </style>
 
 
+    <style name="CodeFontWelcome">
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="CodeFontInstructions">
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="EditTextPlayers">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">textCapWords</item>
+    </style>
+
+    <style name="resetButton">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="playerTextFont">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="pointsFont">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">60sp</item>
+    </style>
+
+    <style name="datasTextFont">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+
+    <style name="datasValueFont">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="imageDecoration">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <style name="congratulationsTextFont">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+
+    <style name="winnerTextFont">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">50sp</item>
+    </style>
+
 </resources>

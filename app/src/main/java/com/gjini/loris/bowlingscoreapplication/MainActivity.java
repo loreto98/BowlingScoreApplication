@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         String SecondPlayerString = SecondPlayer.getText().toString();
 
         if (FirstPlayerString.matches("")) {
-            Toast.makeText(this, "You did not enter the first player name", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.nofirstplayername, Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (SecondPlayerString.matches("")) {
-            Toast.makeText(this, "You did not enter the second player name", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.nosecondplayername, Toast.LENGTH_SHORT).show();
             return;
         }
 
