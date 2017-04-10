@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gjini.loris.bowlingscoreapplication.PointActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/page_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Player1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Player 1"
+                        android:textColor="@android:color/black"
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/team_a_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textSize="60sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Round:"
+                                android:textColor="@android:color/black"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:id="@+id/roundNumberA"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="1"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Launch:"
+                                android:textColor="@android:color/black"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:id="@+id/launchNumberA"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="1"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/strikea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:onClick="allpinA"
+                        android:text="Strike" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <Button
+                            android:id="@+id/onepointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onepinA"
+                            android:text="1" />
+
+                        <Button
+                            android:id="@+id/twopointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="twopinA"
+                            android:text="2" />
+
+                        <Button
+                            android:id="@+id/threepointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="threepinA"
+                            android:text="3" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <Button
+                            android:id="@+id/fourpointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="fourpinA"
+                            android:text="4" />
+
+                        <Button
+                            android:id="@+id/fivepointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="fivepinA"
+                            android:text="5" />
+
+                        <Button
+                            android:id="@+id/sixpointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="sixpinA"
+                            android:text="6" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <Button
+                            android:id="@+id/sevenpointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="sevenpinA"
+                            android:text="7" />
+
+                        <Button
+                            android:id="@+id/eightpointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="eightpinA"
+                            android:text="8" />
+
+                        <Button
+                            android:id="@+id/ninepointa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="ninepinA"
+                            android:text="9" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/zeropointa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:onClick="zeropinA"
+                        android:text="0" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        android:layout_margin="30dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/bowling"
+                        android:layout_gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/page_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Player2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Player 2"
+                        android:textColor="@android:color/black"
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/team_b_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textSize="60sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Round:"
+                                android:textColor="@android:color/black"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:id="@+id/roundNumberB"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="1"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Launch:"
+                                android:textColor="@android:color/black"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:id="@+id/launchNumberB"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="1"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/strikeb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:onClick="allpinB"
+                        android:text="Strike" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <Button
+                            android:id="@+id/onepointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="onepinB"
+                            android:text="1" />
+
+                        <Button
+                            android:id="@+id/twopointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="twopinB"
+                            android:text="2" />
+
+                        <Button
+                            android:id="@+id/threepointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="threepinB"
+                            android:text="3" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <Button
+                            android:id="@+id/fourpointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="fourpinB"
+                            android:text="4" />
+
+                        <Button
+                            android:id="@+id/fivepointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="fivepinB"
+                            android:text="5" />
+
+                        <Button
+                            android:id="@+id/sixpointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="sixpinB"
+                            android:text="6" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <Button
+                            android:id="@+id/sevenpointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="sevenpinB"
+                            android:text="7" />
+
+                        <Button
+                            android:id="@+id/eightpointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="eightpinB"
+                            android:text="8" />
+
+                        <Button
+                            android:id="@+id/ninepointb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="ninepinB"
+                            android:text="9" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/zeropointb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:onClick="zeropinB"
+                        android:text="0" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/bowling" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </android.support.v4.view.ViewPager>
+
+    <Button
+        android:id="@+id/resetScore"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/roundbutton"
+        android:onClick="resetScore"
+        android:text="RESET" />
+
+</RelativeLayout>

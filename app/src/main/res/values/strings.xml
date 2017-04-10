@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bowling Score Application</string>
+    <string name="anotherattempt">Well Played</string>
+    <string name="succeednextround">You\'ll succeed the next round!\nNext Player!</string>
+    <string name="alldown">Congratulation, all pins were down.\nNext Player!</string>
+    <string name="otherplayerround">Now it\'s the round of the other player</string>
+    <string name="morepins">You can\'t make fall more pins than the remaining ones</string>
+    <string name="resettext">Everything has been set to 0 correctly</string>
+    <string name="drawfinal">It\'s a draw, good game</string>
+</resources>
